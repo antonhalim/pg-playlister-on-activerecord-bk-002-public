@@ -3,10 +3,10 @@ require 'rake'
 load './Rakefile'
 
 RSpec.configure do |config|
-  config.before do
+  config.before(:each) do
     run_rake_task('db:migrate')
   end
-  config.after do
+  config.after(:each) do
     run_rake_task('db:drop')
   end
 end
