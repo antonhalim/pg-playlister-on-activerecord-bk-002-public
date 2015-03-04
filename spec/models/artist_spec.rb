@@ -1,9 +1,10 @@
 describe 'Artist' do
-  before do
+  before(:each) do
     @prince = Artist.create(name: "Prince")
   end
   
   it 'has a name' do
+    # binding.pry
     expect(Artist.find_by(name: "Prince")).to eq(@prince)
   end
 

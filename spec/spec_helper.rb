@@ -3,6 +3,9 @@ require 'rake'
 load './Rakefile'
 
 RSpec.configure do |config|
+  config.before(:all) do
+    run_rake_task('db:drop')
+  end
   config.before(:each) do
     run_rake_task('db:migrate')
   end
