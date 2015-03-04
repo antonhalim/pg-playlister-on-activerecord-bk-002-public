@@ -6,6 +6,14 @@ resources: 2
 
 # Playlister on ActiveRecord
 
+## Quick Note
+
+This lab will add tables to the `playlister` database so go ahead and make it now:
+
+```
+> createdb playlister
+```
+
 ## Description
 
 In this lab, we'll be recreating the basic functionality that we already built out in [Playlister-rb](http://learn.flatironschool.com/lessons/940) but this time, using ActiveRecord associations. 
