@@ -1,5 +1,5 @@
 describe 'Genre' do
-  before do
+  before(:each) do
     @genre = Genre.create(name: "Hip Hop")
   end
 

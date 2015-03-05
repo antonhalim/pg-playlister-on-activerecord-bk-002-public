@@ -4,7 +4,6 @@ describe 'Artist' do
   end
   
   it 'has a name' do
-    # binding.pry
     expect(Artist.find_by(name: "Prince")).to eq(@prince)
   end
 

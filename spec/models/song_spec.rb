@@ -1,5 +1,5 @@
 describe 'Song' do
-  before do
+  before(:each) do
     @song = Song.create(name: "Forever")
   end
   
