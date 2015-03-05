@@ -17,7 +17,8 @@ namespace :db do
   task :drop do
     connection_details = YAML::load(File.open('config/database.yml'))
     ActiveRecord::Base.establish_connection(connection_details)
-    ActiveRecord::Migrator.down("db/migrations", 0)
+    # ActiveRecord::Migrator.down("db/migrations", 0)
+    ActiveRecord::Migrator.rollback("db/migrations", 100)
   end
 
 end

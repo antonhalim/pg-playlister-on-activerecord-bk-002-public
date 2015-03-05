@@ -8,18 +8,18 @@ describe 'Genre' do
   end
 
   it 'has many songs' do
-    @genre.songs << Song.create(name: "Something By That Person Who Sings Stuff")
+    @genre.songs << Song.create(name: "7/11")
     @genre.save
 
-    found_song = Song.find_by(name: "Something By That Person Who Sings Stuff")
+    found_song = Song.find_by(name: "7/11")
     expect(found_song.genre).to eq(@genre)
   end
 
   it 'is also associated with an artist' do
-    artist = Artist.create(name: "Fun Person Who Sings")
-    song = Song.create(name: "Sweet Tunez", genre: @genre)
+    artist = Artist.create(name: "Ne-Yo")
+    song = Song.create(name: "She Knows", genre: @genre)
     artist.songs << song
-    artist.save
+    artist.save 
 
     expect(@genre.artists).to include(artist)
   end

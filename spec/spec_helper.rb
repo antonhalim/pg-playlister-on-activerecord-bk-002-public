@@ -10,6 +10,9 @@ RSpec.configure do |config|
     run_rake_task('db:migrate')
   end
   config.after(:each) do
+    Artist.delete_all
+    Genre.delete_all
+    Song.delete_all
     run_rake_task('db:drop')
   end
 end
