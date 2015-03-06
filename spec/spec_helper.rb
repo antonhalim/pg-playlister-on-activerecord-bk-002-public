@@ -10,16 +10,13 @@ RSpec.configure do |config|
     run_rake_task('db:migrate')
   end
   config.after(:each) do
-    Artist.delete_all
-    Genre.delete_all
-    Song.delete_all
     run_rake_task('db:drop')
   end
 end
 
 def run_rake_task(task)
   RAKE_APP[task].invoke
-  if task == 'db:migrate'
+  if task == 'db:migrate' || task == 'db:drop' 
     RAKE_APP[task].reenable
   end
 end
